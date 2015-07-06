@@ -1,0 +1,61 @@
+/*1. Total number of Flights*/
+
+SELECT count (*)  
+FROM flights
+
+
+
+/*2 Total number of flights by airline*/
+
+SELECT  carrier, count (*) as Flt_Count
+       
+FROM flights
+GROUP BY carrier
+
+
+
+
+/*3. Show all airlines with each flights count in descending order*/ 
+
+SELECT  carrier, count (*) as Flt_Count
+       
+FROM flights
+GROUP BY carrier
+ORDER by Flt_Count desc; 
+
+
+/*4. Show top 5 airles, by number of lights, orderder by number of flights in descending*/ 
+
+SELECT  carrier, count (*) as F_Count
+       
+FROM flights
+GROUP BY carrier
+ORDER by F_Count desc 
+limit 5;
+
+
+/*SELECT carrier 
+FROM flights
+WHERE carrier = '00'*/
+
+
+
+/*the top 5 airlines, by number of flights of distance 1,000 miles or greater, ordered by number of
+flights in descending order*/
+
+SELECT  carrier, count (*) as F_Count
+       
+FROM flights
+Where distance >= 1000
+GROUP BY carrier
+ORDER by F_Count desc 
+limit 5;
+
+/*6. Which carrier has the most delayed flights when departing*/ 
+
+SELECT carrier, count (*) as NumFlt, TOTAL { SELECT carrier, count(*) FROM flights GROUP BY carrier}
+
+FROM flights
+Where dep_delay > 0 
+GROUP BY carrier
+ORDER BY NumFlt desc
