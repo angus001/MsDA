@@ -1,0 +1,21 @@
+# 1. Write a loop that calculates 12-Factorial.
+flp <- function (x) { 
+y<-1  
+
+for ( i in 1 : x )
+{ y = y * i 
+  i < - i +1 }
+print(y)
+}
+
+#2. Create numberic vector for sequence from 20 to 50 by 5
+sq  <- seq(20,50, by = 5)
+
+
+#3. Take 3 input numbers and create quadratic equation
+qd <- function (a,b,c) {  
+  x1 <- (((-1 * b) + sqrt(b^2 - (4* a* c))) / (2* a))
+  x2 <- (((-1 * b) - sqrt(b^2 -(4*a*c))) / (2*a)) 
+  print (c(x1,x2))
+  
+  }
